@@ -9,7 +9,8 @@ from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core.views import CategoriaViewSet, EditoraViewSet, UserViewSet, AutorViewSet, LivroViewSet
+from core.views import CategoriaViewSet, EditoraViewSet, UserViewSet, AutorViewSet, LivroViewSet, CompraViewSet # inclua essa linha
+
 from uploader.router import router as uploader_router
 
 
@@ -19,6 +20,8 @@ router.register(r'editoras', EditoraViewSet)
 router.register(r'autores', AutorViewSet)
 router.register(r'livros', LivroViewSet)
 router.register(r'usuarios', UserViewSet, basename='usuarios')
+router.register(r'compras', CompraViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
